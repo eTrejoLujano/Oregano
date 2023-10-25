@@ -1,4 +1,3 @@
-const { green, red } = require("chalk");
 const {
   db,
   models: { User, Product, Order, OrderProduct },
@@ -233,7 +232,6 @@ const seedProducts = [
   },
 ];
 
-
 // Oders seed
 
 // const seedOrders = [
@@ -320,11 +318,9 @@ module.exports = seed;
 if (require.main === module) {
   seed()
     .then(() => {
-      console.log(green("Seeding success!"));
       db.close();
     })
     .catch((err) => {
-      console.error(red("Oh noes! Something went wrong!"));
       console.error(err);
       db.close();
     });
